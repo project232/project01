@@ -1,0 +1,96 @@
+ /* Reset some default styles for better consistency */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Style for the header */
+.head {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+}
+
+.nav li {
+    margin-right: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #ff5733; /* Change the color on hover */
+}
+
+/* Hamburger menu icon */
+.menu-icon {
+    display: none; /* Initially hidden on larger screens */
+    cursor: pointer;
+}
+
+.menu-icon div {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: background-color 0.3s;
+}
+
+/* Show menu when expanded class is added */
+.expanded .nav {
+    display: block;
+}
+
+/* Style the expanded menu */
+.expanded .menu-icon div {
+    background-color: #ff5733; /* Change color when menu is expanded */
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+    .nav {
+        display: none; /* Hide menu items by default on smaller screens */
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+    }
+
+    .nav li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block; /* Show menu icon on smaller screens */
+    }
+
+    /* Show menu when expanded class is added */
+    .expanded .nav {
+        display: flex;
+    }
+}
